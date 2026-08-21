@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="container">
+
+    <!-- LOGIN -->
+    <section id="login-section" class="card">
+        <h1>📚 Library</h1>
+        <p class="subtitle">Library Management System</p>
+
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="divider">OR</div>
+
+        <button id="google-login" class="google-btn">
+            Continue with Google
+        </button>
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboard-section" class="dashboard hidden">
+
+        <header>
+            <div>
+                <h1>📚 Library Dashboard</h1>
+                <p>Manage your library</p>
+            </div>
+
+            <button id="logout">Logout</button>
+        </header>
+
+
+        <!-- BOOKS -->
+        <section class="card">
+            <div class="section-header">
+                <h2>Books</h2>
+                <button onclick="showBookForm()">+ Add Book</button>
+            </div>
+
+            <div id="book-form" class="form-box hidden">
+
+            <input
+            type="number"
+            id="book-id"
+            placeholder="Book ID"
+            >
+                <input
+                    type="text"
+                    id="book-title"
+                    placeholder="Book title"
+                >
+
+                <input
+                    type="text"
+                    id="book-author"
+                    placeholder="Author"
+                >
+
+                <input
+                    type="number"
+                    id="book-year"
+                    placeholder="Publish year"
+                >
+
+                <button onclick="saveBook()">Save</button>
+
+                <button onclick="hideBookForm()" class="secondary">
+                    Cancel
+                </button>
+
+            </div>
+
+            <div id="books-list"></div>
+        </section>
+
+
+        <!-- MEMBERS -->
+        <section class="card">
+            <div class="section-header">
+                <h2>Members</h2>
+                <button onclick="showMemberForm()">+ Add Member</button>
+            </div>
+
+            <div id="member-form" class="form-box hidden">
+
+                <input type="hidden" id="member-id">
+
+                <input
+                    type="text"
+                    id="member-name"
+                    placeholder="Member name"
+                >
+
+                <input
+                    type="text"
+                    id="member-phone"
+                    placeholder="Phone number"
+                >
+
+                <input
+                    type="email"
+                    id="member-email"
+                    placeholder="Email"
+                >
+
+                <button onclick="saveMember()">Save</button>
+
+                <button onclick="hideMemberForm()" class="secondary">
+                    Cancel
+                </button>
+
+            </div>
+
+            <div id="members-list"></div>
+        </section>
+
+
+        <!-- LOANS -->
+        <section class="card">
+            <div class="section-header">
+                <h2>Loans</h2>
+            </div>
+
+            <div id="loans-list"></div>
+        </section>
+
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
